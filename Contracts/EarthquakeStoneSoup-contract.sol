@@ -9,9 +9,9 @@ import "contracts/DefaultOperatorFilterer.sol";
 contract NFT is ERC721, Ownable, DefaultOperatorFilterer {
     using Strings for uint256;
 
-    uint public constant MAX_TOKENS = 10000;
+    uint public constant MAX_TOKENS = 999;
     uint private constant TOKENS_RESERVED = 5;
-    uint public price = 100000000000000000;
+    uint public price = 20000000000000000; // 0.02
     uint256 public constant MAX_MINT_PER_TX = 10;
 
     bool public isSaleActive;
@@ -21,7 +21,7 @@ contract NFT is ERC721, Ownable, DefaultOperatorFilterer {
     string public baseUri;
     string public baseExtesion = ".json";
 
-    constructor() ERC721("NFT Name", "SYMBOL") {
+    constructor() ERC721("Earthquake Stone Soup", "CULTxBON") {
         baseUri = "ipfs://xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/";
         for(uint256 i = 1; i <= TOKENS_RESERVED; ++i) {
             _safeMint(msg.sender, i);

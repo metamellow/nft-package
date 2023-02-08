@@ -3,7 +3,7 @@
 
 # @DEV NOTES
 >> Todo Soon
-- xx
+- combine this with the current contract: https://github.com/jklepatch/eattheblocks/blob/master/screencast/379-nft-royalties/contracts/NFT.sol // https://www.youtube.com/watch?v=dbmPkdMg_Fs // https://eips.ethereum.org/EIPS/eip-2981
 
 >> Todo Later
 - xx
@@ -12,8 +12,7 @@
 <ol>
     <li>Enforced NFT Contracts
         <ol>
-            <li>Download and import full file pack into remix contracts folder -- https://github.com/reecehunter/opensea-enforcer</li>
-            <li>Copy paste finished code into NFT contract -- https://github.com/reecehunter/youtube/blob/main/contracts/nft-opensea-enforced.sol</li>
+            <li> copy paste https://github.com/reecehunter/youtube/blob/main/contracts/simple-nft.sol </li>
             <li>Edit contract name/info</li>
             <li>Deploy and verify -- https://youtu.be/cDZ0p5WTT3A?t=600</li>
         </ol>
