@@ -11,7 +11,13 @@
 
 
 >> Repeatable NFT Collection Steps
-1. Write NFT Contracts
+1. Generate NFT Art
+    - Use hashlips to generate art: (1) download the haslips engine (2) install node_modules (!) these steps can be skipped if using template folder (3) edit the config file (4) add the layer images with correct labeling (5) 'node index.js' to generate 
+        - how to guide: https://youtu.be/lFDpBmoD62A
+        - code: https://github.com/HashLips/hashlips_art_engine
+    - Upload IPFS and metadata: (1) create an api key on nft.storage and enter that into nftup (2) take the images folder from hashlips and drag and drop it into nftup (3) copy CID into hashlips config.js then run 'npx run update_info' (4) upload JSONs into nftup (5) copy CID and double check the files are linked correctly
+        - how to guide: https://youtu.be/_8c9FJ7W-jE
+2. Write NFT Contracts
     - copy paste the base code
         - code: https://github.com/reecehunter/youtube/blob/main/contracts/simple-nft.sol
     - add additional functions
@@ -23,13 +29,7 @@
             - code 1: https://github.com/kennethhutw/EIP2981-implementation
             - how to guide 2 : https://youtu.be/h6Fb_dPZCd0
             - code 2: https://gist.github.com/shobhitic/50518080ca7cb29072d72730873ff54a
-2. Generate NFT Art
-    - Use hashlips to generate art
-        - how to guide: https://youtu.be/lFDpBmoD62A
-        - code: https://github.com/HashLips/hashlips_art_engine
-    - Upload IPFS and metadata
-        - how to guide: https://youtu.be/_8c9FJ7W-jE
-        - code: 
+
 3. Deploy Contracts
     - Update variables; IPFS link, wallet addresses, xxx
     - Deploy code and verify

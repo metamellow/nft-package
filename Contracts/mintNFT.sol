@@ -6,13 +6,13 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 // these can be auto imported via Remix IDE
 
-contract ESS_CULTxBON is ERC721, Ownable {
+contract mintNFT is ERC721, Ownable {
     using Strings for uint256;
 
     uint public constant MAX_TOKENS = 999;
-    uint private constant TOKENS_RESERVED = 9;
+    uint private constant TOKENS_RESERVED = 49;
     uint public price = 20000000000000000000; // 20
-    uint256 public constant MAX_MINT_PER_TX = 10;
+    uint256 public constant MAX_MINT_PER_TX = 20;
 
     bool public isSaleActive;
     uint256 public totalSupply;
