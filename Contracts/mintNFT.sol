@@ -21,8 +21,10 @@ contract mintNFT is ERC721, Ownable {
     string public baseUri;
     string public baseExtension = ".json";
 
+    event NewNFTMinted(address sender, uint256 tokenId);
+
     constructor() ERC721("Earthquake Stone Soup", "CULTxBON") {
-        baseUri = "ipfs://xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/";
+        baseUri = "ipfs://bafybeihkgh5vqrh2y7vd4dsvlxai3hc3yt637triuflgbl2oqyauhs5dtm/";
         for(uint256 i = 1; i <= TOKENS_RESERVED; ++i) {
             _safeMint(msg.sender, i);
         }
@@ -43,6 +45,8 @@ contract mintNFT is ERC721, Ownable {
         }
         mintedPerWallet[msg.sender] += _numTokens;
         totalSupply += _numTokens;
+
+        emit NewNFTMinted(msg.sender, totalSupply);
     }
 
     // Owner-only functions
@@ -61,7 +65,7 @@ contract mintNFT is ERC721, Ownable {
     function withdrawAll() external payable onlyOwner {
         uint256 balance = address(this).balance;
         uint256 tempWallet = balance * 100 / 100;
-        ( bool transferOne, ) = payable(0x7fA27Ce13610dBa312F4362547CED770BAaC4141).call{value: tempWallet}("");
+        ( bool transferOne, ) = payable(0xCeCD463F34F722ce687a5324b6Fdd2E1C8FB4E86).call{value: tempWallet}("");
         require(transferOne, "Transfer failed.");
     }
 
