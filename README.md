@@ -2,14 +2,6 @@
  BON x CULT NFT Collection (100% funds for charity)
 
 # @DEV NOTES
->> Todo Soon
-- bonRedistributionWallet: 0xBddB0337CB05977106D2b1aCba46424205b52Ffb
-
->> Todo Later
-- xx
-
-
-
 >> Repeatable NFT Collection Steps
 1. Generate NFT Art
     - Use hashlips to generate art: (1) download the haslips engine (2) install node_modules (!) these steps can be skipped if using template folder (3) edit the config file (4) add the layer images with correct labeling (5) 'node index.js' to generate 
@@ -35,5 +27,4 @@
     - Deploy code and verify
         - how to guide: https://youtu.be/cDZ0p5WTT3A?t=600
 4. Integrate into HTML/JS/JSON page
-    - xxx
     
