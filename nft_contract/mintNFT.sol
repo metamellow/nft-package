@@ -24,7 +24,7 @@ contract mintNFT is ERC721, Ownable {
     event NewNFTMinted(address sender, uint256 tokenId);
 
     constructor() ERC721("BON Test NFTs", "bontestnft") {
-        baseUri = "ipfs://xxxxxxxxxxxxx/";
+        baseUri = "ipfs://bafybeigeahcu45luueka4cvtrvwf7uci4zm7dbqey73bpk2ny5k3pcijuy/";
         for(uint256 i = 1; i <= TOKENS_RESERVED; ++i) {
             _safeMint(msg.sender, i);
         }
