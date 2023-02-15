@@ -9,10 +9,10 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 contract mintNFT is ERC721, Ownable {
     using Strings for uint256;
 
-    uint public constant MAX_TOKENS = 999;
-    uint private constant TOKENS_RESERVED = 49;
-    uint public price = 20000000000000000000; // 20
-    uint256 public constant MAX_MINT_PER_TX = 20;
+    uint public constant MAX_TOKENS = 9;
+    uint private constant TOKENS_RESERVED = 1;
+    uint public price = 20000000000000000; // 0.02
+    uint256 public constant MAX_MINT_PER_TX = 9;
 
     bool public isSaleActive;
     uint256 public totalSupply;
@@ -23,8 +23,8 @@ contract mintNFT is ERC721, Ownable {
 
     event NewNFTMinted(address sender, uint256 tokenId);
 
-    constructor() ERC721("Earthquake Stone Soup", "CULTxBON") {
-        baseUri = "ipfs://bafybeihkgh5vqrh2y7vd4dsvlxai3hc3yt637triuflgbl2oqyauhs5dtm/";
+    constructor() ERC721("BON Test NFTs", "bontestnft") {
+        baseUri = "ipfs://xxxxxxxxxxxxx/";
         for(uint256 i = 1; i <= TOKENS_RESERVED; ++i) {
             _safeMint(msg.sender, i);
         }
@@ -64,8 +64,8 @@ contract mintNFT is ERC721, Ownable {
 
     function withdrawAll() external payable onlyOwner {
         uint256 balance = address(this).balance;
-        uint256 tempWallet = balance * 100 / 100;
-        ( bool transferOne, ) = payable(0xCeCD463F34F722ce687a5324b6Fdd2E1C8FB4E86).call{value: tempWallet}("");
+        uint256 devWallet = balance * 100 / 100;
+        ( bool transferOne, ) = payable(0x4d28B3b1A14c90F859675e9c9bFc0852edDd1574).call{value: devWallet}("");
         require(transferOne, "Transfer failed.");
     }
 

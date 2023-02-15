@@ -5,22 +5,21 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Earthquake Stone Soup Collection";
-const description = "[[ $CULT x $BON ]] 100% of the funds raised by this collection will be sent directly to the NGO @ahbap for Türkiye & Syria emergency relief.";
-const baseUri = "ipfs://bafybeigtuqrf74opgp4j5qpcaeuzurkewpcrpvzztx2etdpxxtm6pxfrpm";
+const namePrefix = "BON Test NFTs";
+const description = "This is a test collection.";
+const baseUri = "ipfs://bafybeiasxnieou3ny3rsgmyy2s355tuhmifkrooddldeqgmchj4ybgmf3i";
 
 const solanaMetadata = {
-  symbol: "ESSC",
+  symbol: "bontestnft",
   external_url: "https://www.bankofnowhere.world",
 };
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 999,
+    growEditionSizeTo: 9,
     layersOrder: [
       { name: "Background" },
-      { name: "Details" },
       { name: "Body" },
     ],
   },
@@ -31,8 +30,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 2048,
-  height: 2048,
+  width: 1024,
+  height: 1024,
   smoothing: false,
 };
 
@@ -71,7 +70,7 @@ const extraMetadata = {};
 
 const rarityDelimiter = "#";
 
-const uniqueDnaTorrance = 20000;
+const uniqueDnaTorrance = 10000;
 
 const preview = {
   thumbPerRow: 5,
