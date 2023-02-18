@@ -1,5 +1,6 @@
-# earthquake-stone-soup
- BON x CULT NFT Collection (100% funds for charity)
+
+add an optional auto mint that loops through a json/array of addresses
+
 
 # @DEV NOTES
 >> Repeatable NFT Collection Steps
