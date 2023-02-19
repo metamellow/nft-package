@@ -1,7 +1,3 @@
-
-add an optional auto mint that loops through a json/array of addresses
-
-
 # @DEV NOTES
 >> Repeatable NFT Collection Steps
 1. Generate NFT Art
