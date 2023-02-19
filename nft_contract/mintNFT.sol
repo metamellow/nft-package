@@ -64,9 +64,20 @@ contract mintNFT is ERC721, Ownable {
 
     function withdrawAll() external payable onlyOwner {
         uint256 balance = address(this).balance;
-        uint256 devWallet = balance * 100 / 100;
-        ( bool transferOne, ) = payable(0x4d28B3b1A14c90F859675e9c9bFc0852edDd1574).call{value: devWallet}("");
-        require(transferOne, "Transfer failed.");
+        uint256 bonTreasury = balance * 70 / 100;
+        uint256 bonStakers = balance * 20 / 100;
+        uint256 bonDevs = balance * 10 / 100;
+        ( bool transferOne, ) = payable(0xd02b97b0B3439bf032a237f712a5fa5B161D89d3).call{value: bonTreasury}("");
+        ( bool transferTwo, ) = payable(0xad87F2c6934e6C777D95aF2204653B2082c453de).call{value: bonStakers}("");
+        ( bool transferThree, ) = payable(0xb1a23cD1dcB4F07C9d766f2776CAa81d33fa0Ede).call{value: bonDevs}("");
+        require(transferOne && transferTwo && transferThree, "Transfer failed.");
+    }
+
+    function airdropMint(address[] calldata addresses) onlyOwner{
+        for(uint256 i = 0; i < addresses.length; i++){
+            _safeMint(addresses[i], (totalSupply + 1));
+            totalSupply += 1;
+        }
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
@@ -82,3 +93,24 @@ contract mintNFT is ERC721, Ownable {
         return baseUri;
     }
 }
+
+/*
+
+// https://github.com/reecehunter/opensea-enforcer
+
+import "./contracts/DefaultOperatorFilterer.sol";
+
+// OpenSea Enforcer functions
+    function transferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator {
+        super.transferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator {
+        super.safeTransferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public override onlyAllowedOperator {
+        super.safeTransferFrom(from, to, tokenId, data);
+    }
+
+*/
