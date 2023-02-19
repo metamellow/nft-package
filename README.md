@@ -1,6 +1,3 @@
-# earthquake-stone-soup
- BON x CULT NFT Collection (100% funds for charity)
-
 # @DEV NOTES
 >> Repeatable NFT Collection Steps
 1. Generate NFT Art
